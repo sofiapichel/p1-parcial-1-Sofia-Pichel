@@ -32,7 +32,7 @@ html {
 
 /** Body */
 body {
-    background-color: #134F5C;
+    background-color: #2977a4;
     color: #D0E0E3;
 }
 
@@ -57,7 +57,7 @@ h2 {
 
 h2 {
     font-size: 3em;
-    color: #134F5C;
+    color: #2977a4;
 }
 
 /** Main */
@@ -74,7 +74,7 @@ main p {
     font-size: 2.4em;
     line-height: 1.5;
     text-align: left;
-    color: #134F5C;
+    color: #2977a4;
 }
 
 main p strong, 
@@ -124,7 +124,7 @@ main button {
     border: none;
     border-radius: .5em;
     padding: .25em .5em;
-    background: #134F5C;
+    background: #2977a4;
     cursor: pointer;
     font-size: 2.4em;
     line-height: 1.5;
