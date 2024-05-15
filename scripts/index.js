@@ -1,19 +1,18 @@
 'use strict';
 
 /*
- * APELLIDO, NOMBRE | APELLIDO, NOMBRE
+ * Pichel,Sofía
  */
 
-/**
- * Llamada desde un boton. Pide los datos para un disco.
- */
+let biblioteca = new Biblioteca();
+
 function cargar() {
-    // TODO:
+    biblioteca.registrarDisco();
 }
 
 /**
- * Llamada desde un boton. Muestra todos los discos disponibles.
+ * Llamada desde un boton. Muestra todos los bibliotecas disponibles.
  */
 function mostrar() {
-    // TODO
+    biblioteca.show("#discos");
 };
