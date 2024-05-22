@@ -56,12 +56,12 @@ h2 {
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.2em;
     color: #2977a4;
 }
 
 h5,h6{
-    font-size: 2.5em;
+    font-size: 2.2em;
     color: #3ca1dc;
 }
 
@@ -82,7 +82,7 @@ main {
 }
 
 main p {
-    font-size: 2.4em;
+    font-size: 2.2em;
     line-height: 1.5;
     text-align: left;
     color: #94c287;

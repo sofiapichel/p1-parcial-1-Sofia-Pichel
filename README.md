@@ -38,42 +38,42 @@ Cualquier faltante de los requisitos que se presentan a continuación, hará que
     - Nombre del disco.
     - Autor o banda del disco.
     - Código numérico único del disco:
-        - Si el usuario ingresa un código numérico que ya fue cargado, se deberá pedir otro código (hasta ingresar uno que no haya sido utilizado anteriormente).
+        <!-- - Si el usuario ingresa un código numérico que ya fue cargado, se deberá pedir otro código (hasta ingresar uno que no haya sido utilizado anteriormente). -->
     - Todas las pistas del disco, donde cada pista tiene un nombre y una duración:
-        - La cantidad de pistas a ingresar **NO** debe ser fija.
+        <!-- - La cantidad de pistas a ingresar **NO** debe ser fija.
         - No se debe preguntar cuántas pistas hay que cargar, el dato se desconoce.
         - Al finalizar la carga de una pista, se debe confirmar si se desea ingresar otra más.
-        - Cuando el usuario decide dejar de cargar pistas, finaliza la acción de la función.
+        - Cuando el usuario decide dejar de cargar pistas, finaliza la acción de la función. -->
     - En todo caso debe validarse que los datos ingresados sean válidos:
-        - El nombre del disco, autor/banda y nombre de la pista no pueden quedar vacíos.
-        - El código numérico único del disco no puede ser menor a 1, ni mayor a 999.
-        - La duración de cada pista debe estar entre 0 y 7200 (segundos) inclusive.
+        <!-- - El nombre del disco, autor/banda y nombre de la pista no pueden quedar vacíos. -->
+        <!-- - El código numérico único del disco no puede ser menor a 1, ni mayor a 999. -->
+        <!-- - La duración de cada pista debe estar entre 0 y 7200 (segundos) inclusive. -->
 
-- Al hacer clic en el botón "Mostrar discos", la función `mostrar` debe mostrar cada disco con: nombre, autor o banda, código único y todas las pistas con su nombre y duración.
+<!-- - Al hacer clic en el botón "Mostrar discos", la función `mostrar` debe mostrar cada disco con: nombre, autor o banda, código único y todas las pistas con su nombre y duración. -->
+<!-- 
+- Las duraciones de las pistas deben mostrarse en minutos y segundos en el formato `MM:SS`. -->
 
-- Las duraciones de las pistas deben mostrarse en minutos y segundos en el formato `MM:SS`.
-
-- Hay que destacar visualmente (otro color de fuente, fondo o cualquier recurso que sea conveniente) las duraciones mayores a tres minutos.
+<!-- - Hay que destacar visualmente (otro color de fuente, fondo o cualquier recurso que sea conveniente) las duraciones mayores a tres minutos. -->
 
 ## Agregados para llegar a 10
 
 Entre las entregas que cumplan el punto anterior, incrementarán su nota los desarrollos que:
-
-- Muestren un mensaje (con el método alert) ante cada error distinto cometido en el mismo dato ingresado (haciendo referencia a las validaciones).
+<!-- 
+- Muestren un mensaje (con el método alert) ante cada error distinto cometido en el mismo dato ingresado (haciendo referencia a las validaciones). -->
 
 - Informen en alguna parte de la página, cada vez que se muestran los discos, cuántos se llevan cargados.
 
 - Informen por cada disco:
-    - La cantidad de pistas que tiene cada disco.
+    <!-- - La cantidad de pistas que tiene cada disco. -->
     - La duración total del disco en horas, minutos y segundos en el formato `HH:MM:SS`.
     - El promedio de duración de cada disco en el formato `HH:MM:SS`.
-    - La pista con mayor duración de cada disco.
+    <!-- - La pista con mayor duración de cada disco. -->
 
 - Que destaquen la duración total más alta entre todos los discos.
 
 - Que se pueda mostrar la información de un disco específico buscándolo por su código numérico y que salga un mensaje de error si no se encuentra cargado.
-
-- Usar estilos propios.
+<!-- 
+- Usar estilos propios. -->
 
 - Mostrar un buen uso de clases implementando por lo menos una clase para las pistas y otra para los discos. Estas deben tener metodos apropiadas que faciliten la resolucion del parcial. Se sugiere un archivo separado para cada clase.
 

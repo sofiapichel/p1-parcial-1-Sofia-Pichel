@@ -24,45 +24,60 @@ class Biblioteca {
           
     //     });  
     }
-  
     registrarDisco() {
       let nombre = this.promptValidado("Nombre del disco");
       let artista = this.promptValidado("Autor del disco");
-      let id = this.promptValidado("Código único de identificación", true);
-    
-      // Creo el disco
-      let disco = new Disco(nombre, artista, id);
-      // Agrego disco 
-      this.discos = disco;
-
-      this.registrarPista(disco);
-    }
-
-    registrarPista(disco) {
-      //VALIDACION DE SEGUIR INGRESANDO PISTAS CON EL CONFIRM
-      let nombre = this.promptValidado("Nombre de la pista");
-      let duracion = this.promptValidado("Duración de la pista", true);
+      let id = this.promptValidado("Código único de identificación", true, true);
   
-      // Creo la pista
-      let pista = new Pista(nombre, duracion);
-      // Agrego pista al disco
-      disco.agregarPista(pista);
-      
+      let disco = new Disco(nombre, artista, id);
+      this.discos.push(disco);
+  
+      this.registrarPistas(disco); 
     }
+  
+    registrarPistas(disco) {
+      while (true) {
+        let nombre = this.promptValidado("Nombre de la pista");
+        if (nombre === null) break; 
+  
+        let duracion = this.promptValidado("Duración de la pista en segundos", true, false);
+        if (duracion === null) break; 
+    
+        let pista = new Pista(nombre, duracion);
+        disco.agregarPista(pista);
+  
+        if (!confirm("¿Desea ingresar otra pista?")) break;
+      }
+    }
+  
   
     //VALIDACIÓN DE TEXTO Y NÚMERO 
-    promptValidado(mensaje, esNumero = false) {
+    promptValidado(mensaje, esNumero = false, esId = false) {
       let valor;
-      while (true) { //Mientras que se ingrese un mensaje
+      while (true) {
         valor = prompt(mensaje);
         if (esNumero) {
-          valor = parseInt(valor, 10); // Convierte un string en un num - utiliza la base 10 - logra identificar un número
+          valor = parseInt(valor, 10); // Convertir a número entero en base 10
           if (!isNaN(valor)) {
-            break;
+            console.log(valor)
+            if (valor < 1 || valor > 999 && esId) {//Números válidos
+              alert("Solo se permiten números entre el 1 y el 999.");
+              console.log("numero invalido") 
+            }
+            else if (this.idRepetido(valor) && esId) {//Repetición de id existente
+              alert("El ID ya existe. Por favor, ingrese otro.");
+            } 
+            else if(!esId && (valor > 7200 || valor < 0))//duración de pista
+            {
+              alert("Tiempo de la pista inválido.");
+            }
+            else {
+              break;
+            }
           } else {
             alert("Por favor, ingrese un número válido.");
           }
-        } else if (this.validarNull(valor)) {//Si no es número, evalúa que el texto no sea null
+        } else if (this.validarNull(valor)) {//Texto vacío
           alert("El texto no puede ser vacío.");
         } else {
           break;
@@ -71,14 +86,23 @@ class Biblioteca {
       return valor;
     }
   
+    idRepetido(id) {
+      for (let disco of this.discos) {//Busca en la lista de discos si el id se repite
+        console.log(disco.id)
+        if (disco.id === id) {
+          return true;
+        }
+      }
+      return false;
+    }
     validarNull(texto) {
-      return texto == null;
+      return texto == null ||  texto.trim() === "" ;//Valor null o con espacios sin caractéres
     }
   
     //Muestra el disco en el div seleccionado
     show(etiqueta) {
       const elemento = document.querySelector(etiqueta);
-      elemento.innerHTML = "";  // Limpiar el contenido antes de mostrar los discos, evitando duplicidad
+      elemento.innerHTML = "";  // Limpia el contenido antes de mostrar los discos, evitando duplicidad
       for (let disco of this.discos) {
         disco.show(etiqueta);
       }
