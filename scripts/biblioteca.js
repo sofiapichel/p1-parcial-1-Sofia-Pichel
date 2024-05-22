@@ -6,29 +6,29 @@ class Biblioteca {
       this.#discos = [];
       this.#pistas = [];
 
-    //   fetch("discos.json")
-    //     .then(response => response.json())
-    //     .then(json => {
+      // fetch("discos.json")
+      //   .then(response => response.json())
+      //   .then(json => {
   
-    //       if(json != undefined) {
-    //         console.log(json)
-    //         for(let disco of json) {
-    //           this.#discos.push(new Disco(
-    //             disco.nombre, 
-    //             disco.artista, 
-    //             disco.id, 
-    //             disco.pistas
-    //           ));
-    //         }
-    //       }
+      //     if(json != undefined) {
+      //       console.log(json)
+      //       for(let disco of json) {
+      //         this.#discos.push(new Disco(
+      //           disco.nombre, 
+      //           disco.artista, 
+      //           disco.id, 
+      //           disco.pistas
+      //         ));
+      //       }
+      //     }
           
-    //     });  
+      //   });  
     }
     registrarDisco() {
       let nombre = this.promptValidado("Nombre del disco");
       let artista = this.promptValidado("Autor del disco");
       let id = this.promptValidado("Código único de identificación", true, true);
-  
+      //Agrego el disco
       let disco = new Disco(nombre, artista, id);
       this.discos.push(disco);
   
@@ -38,11 +38,10 @@ class Biblioteca {
     registrarPistas(disco) {
       while (true) {
         let nombre = this.promptValidado("Nombre de la pista");
-        if (nombre === null) break; 
   
         let duracion = this.promptValidado("Duración de la pista en segundos", true, false);
-        if (duracion === null) break; 
     
+        //Agrego la pista
         let pista = new Pista(nombre, duracion);
         disco.agregarPista(pista);
   
@@ -95,6 +94,7 @@ class Biblioteca {
       }
       return false;
     }
+    
     validarNull(texto) {
       return texto == null ||  texto.trim() === "" ;//Valor null o con espacios sin caractéres
     }

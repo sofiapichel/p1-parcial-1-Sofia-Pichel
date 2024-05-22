@@ -20,10 +20,12 @@ class Disco {
     toString() {
       return `<div class="card" style="width: 18rem;">
                 <div class="">
-                  <h5 class="">Álbum: ${this.nombre}</h5>
+                  <p>Álbum</p>
+                  <h5 class="">Nombre: ${this.nombre}</h5>
                   <h6 class="">Autor: ${this.autor}</h6>
-                  <p class="">Código ID: ${this.id}</p>
-                  <p class="">Pistas</p>
+                  <h6 class="">Código ID: ${this.id}</h6>
+                  <hr style="border:1px solid white;">
+                  <p>Pistas</p>
                   <p class="">${this.pistas}</p>
                 </div>
               </div>`;
