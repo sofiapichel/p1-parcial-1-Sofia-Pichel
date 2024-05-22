@@ -32,8 +32,8 @@ html {
 
 /** Body */
 body {
-    background-color: #2977a4;
-    color: #D0E0E3;
+    background-color: #94c287;
+    color: #f8f8f8;
 }
 
 /** Header */
@@ -56,10 +56,21 @@ h2 {
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.2em;
     color: #2977a4;
 }
 
+h5,h6{
+    font-size: 2.2em;
+    color: #3ca1dc;
+}
+
+.card{
+    background-color: antiquewhite; 
+    border-radius: 6px; 
+    padding:15px;
+    margin: 0px 20px;
+}
 /** Main */
 main {
     display: flex;
@@ -71,15 +82,15 @@ main {
 }
 
 main p {
-    font-size: 2.4em;
+    font-size: 2.2em;
     line-height: 1.5;
     text-align: left;
-    color: #2977a4;
+    color: #94c287;
 }
 
 main p strong, 
 main p em {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 main p strong {
@@ -219,7 +230,7 @@ footer ul li a {
     font-family: 'Montserrat';
     font-size: 1em;
     text-decoration: none;
-    color: #D0E0E3;
+    color: #f7f7f7;
 }
 
 footer ul li a:hover {
